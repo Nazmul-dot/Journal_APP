@@ -6,4 +6,5 @@ import org.springframework.web.bind.annotation.RestController;
 
 public abstract class CommonApi {
     public static final String BASE_URL = "/api";
+    public static final String BASE_URL_OAUTH2 = "/api/oauth2";
 }
