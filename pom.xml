@@ -135,7 +135,7 @@
 			<artifactId>jackson-databind</artifactId>
 		</dependency>
 
-<!--		dotenv-->
+<!--		dotenv file-->
 		<dependency>
 			<groupId>me.paulschwarz</groupId>
 			<artifactId>spring-dotenv</artifactId>
