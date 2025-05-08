@@ -48,8 +48,7 @@ public class Oauth2Service {
 
 
         try{
-            System.out.println(clientId);
-            System.out.println(clientSecret);
+
             String tokenEndpoint = "https://oauth2.googleapis.com/token";
             MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
             params.add("code", code);
