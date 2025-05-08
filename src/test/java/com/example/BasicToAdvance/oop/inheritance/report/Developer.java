@@ -17,6 +17,7 @@ public class Developer  extends Employee{
         return getSalary()*0.10;
     }
 
+    @Override
     public void report(){
         System.out.println("Performance report for Developer "+ getName()+" is good");
     }

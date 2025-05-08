@@ -6,4 +6,8 @@ public class Car extends Vehicle {
     public void start(){
         System.out.println("start car");
     }
+
+    public void mode(){
+        System.out.println("this is 203d mode");
+    }
 }

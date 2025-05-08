@@ -39,6 +39,13 @@ public class StringManipulation {
         System.out.println(upperCase);
 
 
+        String input = "springboot";
+        char[] chars = input.toCharArray(); // Convert to char array
+        Arrays.sort(chars);                // Sort the array
+        String sorted = new String(chars); // Convert back to string
+        System.out.println("Sorted: " + sorted);
+
+
         String reversed = new StringBuilder(str).reverse().toString();
         System.out.println("Reversed string = " + reversed);
 

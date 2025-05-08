@@ -5,6 +5,7 @@ public class StaticImpl {
         System.out.println("a = "+CommonAll.a);
         System.out.println("b = "+CommonAll.b);
         System.out.println("toto = "+CommonAll.toto);
+        System.out.println("sum = "+CommonAll.sum(10,20));
 
         int [] arr={1,2,3,4,5,6,7,8,9,10};
         long sum=CommonAll.sum(arr);

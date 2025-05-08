@@ -13,6 +13,7 @@ public class MapMenipulation {
         map.put("Orange",20);
         map.put("Banana",30);
         map.put("Mango",40);
+//      Map<String,Integer> mp=  Map.of("abc",1);
 
         map.put("Apple", 15); // Update existing value
         map.putIfAbsent("Banana", 20); // Only put if key doesn't exist

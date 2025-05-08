@@ -8,7 +8,8 @@ public class MainClass {
         Vehicle v=new Vehicle();
         v.start();
 
-        Vehicle v1=new Car();
+        Vehicle v1=new Car();  // upcast
         v1.start();
+        ((Car) v1).mode();  // downcast
     }
 }
