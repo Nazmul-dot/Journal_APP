@@ -16,8 +16,8 @@ import java.util.function.Function;
 
 @Service
 public class JwtTokenUtil {
-    @Value("${jwt.secret}")
-    private  String SECRET_KEY;
+//    @Value("${jwt.secret}")
+    private  String SECRET_KEY="asdfasdfasdfgqwesfwsefqweert3ewr432rsdcsdfc";
     private static final long JWT_TOKEN_VALIDITY = 60 * 60 ; // 5 hours in seconds
 
     public String extractUsername(String token) {

@@ -6,23 +6,36 @@ server:
 spring:
   application:
     name: BasicToAdvance
-  datasource:
-    url: jdbc:sqlserver://127.0.0.1:1433;databaseName=myDB;encrypt=false
-    username: na
-    password: 606845
-    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
-  jpa:
-    hibernate:
-      ddl-auto: update
-      show-sql: true
-      dialect: org.hibernate.dialect.SQLServer2012Dialect
-      format_sql: true
-    properties:
+#  datasource:
+#    url: jdbc:sqlserver://127.0.0.1:1433;databaseName=myDB;encrypt=false
+#    username: na
+#    password: 606845
+#    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#      show-sql: true
+#      dialect: org.hibernate.dialect.SQLServer2012Dialect
+#      format_sql: true
+#    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.SQLServer2012Dialect
+#        format_sql: true
+#        envers.audit_table_suffix: _AUD
+#        envers.store_data_at_delete: true
+  # ---------------- PostgreSQL ----------------
+  postgresql:
+    datasource:
+      url: jdbc:postgresql://localhost:5432/naz
+      username: postgres
+      password: 123456
+      driverClassName: org.postgresql.Driver
+    jpa:
       hibernate:
-        dialect: org.hibernate.dialect.SQLServer2012Dialect
+        ddl-auto: update
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        show-sql: true
         format_sql: true
-        envers.audit_table_suffix: _AUD
-        envers.store_data_at_delete: true
 
   mail:
     host: smtp.gmail.com

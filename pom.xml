@@ -27,7 +27,7 @@
 		<url/>
 	</scm>
 	<properties>
-		<java.version>23</java.version>
+        <java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -143,6 +143,14 @@
 		</dependency>
 
 
+<!--        postgrest connection    -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.6.0</version>
+        </dependency>
+
+
 	</dependencies>
 
 	<build>
@@ -171,6 +179,9 @@
 					</excludes>
 				</configuration>
 			</plugin>
+
+
+
 		</plugins>
 	</build>
 

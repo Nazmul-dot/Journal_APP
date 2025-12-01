@@ -59,6 +59,8 @@ public class UserServices {
        catch (Exception e) {
            logger.error(e.getMessage());
            throw new RuntimeException(e.getMessage());
+
+
        }
     }
 
