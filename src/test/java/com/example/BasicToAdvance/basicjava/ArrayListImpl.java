@@ -34,10 +34,10 @@ public class ArrayListImpl {
         String first = fruits.get(0);
 
 // Get first element
-        String firstElement = fruits.getFirst(); // Java 21+
+//        String firstElement = fruits.getFirst(); // Java 21+
 
 // Get last element
-        String lastElement = fruits.getLast(); // Java 21+
+//        String lastElement = fruits.getLast(); // Java 21+
 
 // Check if empty
         boolean empty = fruits.isEmpty();
