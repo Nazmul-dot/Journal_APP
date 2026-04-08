@@ -1,5 +1,10 @@
 package com.example.BasicToAdvance.SOLID.liskupSubs;
 
+
+//🔹 L — Liskov Substitution Principle (LSP)
+//👉 Child class should be able to replace parent class without breaking code/behavior.
+
+
 // ============== ❌ BAD Approach (Violates LSP) ==============
 interface BirdBad {
     void fly();

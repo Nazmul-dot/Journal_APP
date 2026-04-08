@@ -20,6 +20,7 @@ public class Car extends Vehivle {
 
     public void display(){
         System.out.println("model of the car = "+model);
+        System.out.println("model 2 ="+Vehivle.model);
         System.out.println("speed = "+speed);
     }
 }

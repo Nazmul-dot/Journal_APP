@@ -23,5 +23,7 @@ public class StackImpl {
 
 // Get size
         int size = stack.size();
+//  clear stack
+        stack.clear();
     }
 }

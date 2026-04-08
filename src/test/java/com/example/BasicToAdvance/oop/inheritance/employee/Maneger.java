@@ -10,6 +10,7 @@ public class Maneger extends Employee{
 
     public void display(){
 
+        System.out.println("-------------  name = "+super.getName() + " age = "+super.getAge()+" salary = "+super.getSalary());
         super.dispaly();
         System.out.println("dept = "+dept);
     }

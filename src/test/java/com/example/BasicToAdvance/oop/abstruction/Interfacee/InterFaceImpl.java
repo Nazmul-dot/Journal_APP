@@ -8,5 +8,11 @@ public class InterFaceImpl {
          a.eat();
          a.sleep();
          a.display();
+         Animal.test();
+         System.out.println("---------------------------------------------");
+         ExtentInterface t=new Cat();
+         t.makesound();
+         t.eat();
+         t.sleep();
      }
 }

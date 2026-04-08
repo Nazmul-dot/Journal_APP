@@ -13,6 +13,8 @@ public class ArrayManipulate {
             System.out.println(arr[i]);
         }
 
+
+
         System.out.println("Enter the array size = ");
         int n2=in.nextInt();
         int[] arr2=new int[n2];
@@ -58,7 +60,6 @@ public class ArrayManipulate {
         Arrays.sort(arr, 2, 5);
         System.out.println(Arrays.toString(arr));
         System.out.println();
-
 
 
         System.out.println("reverse the array = ");

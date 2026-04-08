@@ -167,9 +167,12 @@ public class StringManipulation {
         float num2=Float.parseFloat("123.456");
         System.out.println(num2);
 
-        System.out.println("number to string = ");
-        String num3=Integer.toString(123);
+        Long num3=Long.parseLong("123");
         System.out.println(num3);
+
+//        System.out.println("number to string = ");
+//        String num3=Integer.toString(123);
+//        System.out.println(num3);
 
         System.out.println("double to string = ");
         String num4=Double.toString(123.456);

@@ -1,5 +1,7 @@
 package com.example.BasicToAdvance.basicjava;
 
+import org.checkerframework.checker.units.qual.C;
+
 import java.util.*;
 
 public class ArrayListImpl {
@@ -7,6 +9,8 @@ public class ArrayListImpl {
     public static void arrayListImpl(){
         // Create empty ArrayList
         ArrayList<String> list = new ArrayList<>();
+//        initailize with size
+        List<Integer>arr3=new ArrayList<>(Collections.nCopies(10,0));
 
 // Create with initial capacity
         ArrayList<Integer> numbers = new ArrayList<>(20);
@@ -91,7 +95,8 @@ public class ArrayListImpl {
         fruits.sort(Comparator.comparing(String::length));
 
 // Reverse order
-        fruits.sort(Comparator.reverseOrder());
+        Collections.reverse(fruits);
+
 
         // Convert to array
         String[] array = fruits.toArray(new String[0]);

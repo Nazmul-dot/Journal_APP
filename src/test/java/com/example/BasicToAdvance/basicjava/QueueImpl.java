@@ -12,10 +12,9 @@ public class QueueImpl {
         queue.add("Banana");
         queue.add("Mango");
 
-        String head = queue.remove(); // Remove and return head (throws if empty)
+
         String headOrNull = queue.poll(); // Remove and return head (returns null if empty)
 
-        String head2 = queue.element(); // View head without removal (throws if empty)
         String headOrNull2 = queue.peek(); // View head without removal (returns null if empty)
 
         int size = queue.size(); // Get number of elements

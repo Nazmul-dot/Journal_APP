@@ -12,7 +12,7 @@ public class Programmer extends Developer{
 
     @Override
     public double bonuses(){
-        return super.getSalary()*0.20;
+        return super.getSalary()*0.40;
     }
 
     @Override

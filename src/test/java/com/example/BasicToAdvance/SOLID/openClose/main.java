@@ -1,6 +1,9 @@
 package com.example.BasicToAdvance.SOLID.openClose;
 
 
+//🔹 O — Open/Closed Principle (OCP)
+//👉 Code should be open for extension, but closed for modification.
+
 interface Shape{
        void printArea();
 }

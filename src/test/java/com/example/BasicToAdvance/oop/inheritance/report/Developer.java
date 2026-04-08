@@ -14,7 +14,7 @@ public class Developer  extends Employee{
     }
 
     public double aDouble(){
-        return getSalary()*0.10;
+        return super.getSalary()*0.10;
     }
 
     @Override
@@ -24,5 +24,9 @@ public class Developer  extends Employee{
 
     public void wrideCode(){
         System.out.println("write code using "+ language);
+    }
+
+    public double bonuses(){
+     return super.getSalary()*0.20;
     }
 }

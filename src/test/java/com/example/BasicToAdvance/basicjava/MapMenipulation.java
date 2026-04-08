@@ -52,6 +52,11 @@ public class MapMenipulation {
             }
         }
 
+        Map<Integer,Integer> map2=new HashMap<>();
+        for(int x : arr){
+            map2.put(x,map2.getOrDefault(x,0)+1);
+        }
+
 
     }
 

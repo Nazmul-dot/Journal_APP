@@ -1,5 +1,9 @@
 package com.example.BasicToAdvance.SOLID.InterfaceSeg;
 
+
+//🔹 I — Interface Segregation Principle (ISP)
+//👉 Don’t force a class to implement methods it doesn’t need.
+
 interface Workable {
     void work();
 }

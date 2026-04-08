@@ -4,6 +4,9 @@ public class Circle {
     private double radius;
     private double area;
     private double perimeter;
+    public Circle(){{
+        this.radius=0;
+    }}
 
     public Circle(double radius){
         this.radius=radius;

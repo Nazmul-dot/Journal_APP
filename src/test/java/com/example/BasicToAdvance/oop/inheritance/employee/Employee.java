@@ -1,5 +1,10 @@
 package com.example.BasicToAdvance.oop.inheritance.employee;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class Employee extends Person {
 
     private double salary;

@@ -1,5 +1,8 @@
 package com.example.BasicToAdvance.SOLID.singleRespons;
 
+
+//S — Single Responsibility Principle (SRP)
+//👉 A class should have only one job (responsibility).
 // Domain Objects
 class User {
     void save() {

@@ -9,14 +9,11 @@ public class Maneger extends Employee {
         this.dept=dept;
     }
 
-    public void display(){
-        super.report();
-        System.out.println("dept = "+dept);
-    }
+
 
     @Override
     public double bonuses(){
-        return getSalary()*0.20;
+        return getSalary()*0.15;
     }
 
     @Override
@@ -28,5 +25,8 @@ public class Maneger extends Employee {
         System.out.println("manage the project");
     }
 
-
+    public void display(){
+        report();
+        System.out.println("dept = "+dept);
+    }
 }

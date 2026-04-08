@@ -30,5 +30,11 @@ public class EncapsuImpl {
         Products p=new Products("Computer","C1",1000);
         p.discount(20);
         System.out.println(p.getPrice());
+
+        Circle obj=new Circle(5);
+        System.out.println(obj.getRadius());
+        System.out.println(obj.getArea());
+        System.out.println(obj.getPerimeter());
+
     }
 }

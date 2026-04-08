@@ -16,7 +16,7 @@ public interface Animal {
          System.out.println("animal count = "+maxAnimal);
      }
 
-     public static void test(){
+      static void test(){
          System.out.println("test");
      }
 

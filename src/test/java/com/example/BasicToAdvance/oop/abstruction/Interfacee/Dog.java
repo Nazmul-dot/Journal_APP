@@ -16,7 +16,9 @@ public class Dog implements Animal{
         System.out.println("Zzzzzz");
     }
 
+    @Override
     public void display(){
+        System.out.println("from dog");
         System.out.println("dog count = "+maxAnimal);
         Animal.test();
     }
