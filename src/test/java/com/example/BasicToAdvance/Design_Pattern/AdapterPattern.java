@@ -20,7 +20,7 @@ class OldCharger{
 
 class Adapter implements USB{
 
-    OldCharger old;
+    private final OldCharger old;
     public Adapter(OldCharger old){
         this.old=old;
     }

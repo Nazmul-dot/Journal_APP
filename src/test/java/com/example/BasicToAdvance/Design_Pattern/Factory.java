@@ -1,9 +1,9 @@
 //2. Factory Pattern(Creational Patterns)
 //Definition: Creates objects without specifying the exact class to create.
 //Real-life example: A vehicle factory that can produce cars, bikes, or trucks based on your order.
+//Instead of creating objects yourself, you ask another class (Factory) to create them.
 
 package com.example.BasicToAdvance.Design_Pattern;
-
 interface Vehicle{
     void drive();
 }

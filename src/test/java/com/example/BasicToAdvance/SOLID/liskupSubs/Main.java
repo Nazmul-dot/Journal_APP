@@ -2,250 +2,114 @@ package com.example.BasicToAdvance.SOLID.liskupSubs;
 
 
 //🔹 L — Liskov Substitution Principle (LSP)
-//👉 Child class should be able to replace parent class without breaking code/behavior.
+//-> A subclass should be replaceable with its parent class without breaking behavior.
 
 
-// ============== ❌ BAD Approach (Violates LSP) ==============
-interface BirdBad {
-    void fly();
-    void eat();
-    void makeSound();
+
+interface Animal{
+    void eate();
+    void sleep();
+    void moved();
 }
 
-class SparrowBad implements BirdBad {
-    @Override
-    public void fly() {
-        System.out.println("Sparrow is flying high!");
-    }
-
-    @Override
-    public void eat() {
-        System.out.println("Sparrow is eating seeds");
-    }
-
-    @Override
-    public void makeSound() {
-        System.out.println("Sparrow: Chirp chirp!");
-    }
-}
-
-class PenguinBad implements BirdBad {
-    @Override
-    public void fly() {
-        // ❌ PROBLEM: Penguins can't fly!
-        // Have to either throw exception or provide dummy implementation
-        throw new UnsupportedOperationException("Penguins can't fly!");
-        // or
-        // System.out.println("Penguin tries to fly... fails!"); // Lie to the compiler
-    }
-
-    @Override
-    public void eat() {
-        System.out.println("Penguin is eating fish");
-    }
-
-    @Override
-    public void makeSound() {
-        System.out.println("Penguin: Honk honk!");
-    }
-}
-
-// ============== ✅ GOOD Approach (Follows LSP) ==============
-
-// Base interface with common bird behaviors
-interface Bird {
-    void eat();
-    void makeSound();
-    void move();  // Generic movement method
-}
-
-// Interface for birds that can fly
-interface FlyingBird extends Bird {
-    void fly();
-}
-
-// Interface for birds that can swim
-interface SwimmingBird extends Bird {
-    void swim();
-}
-
-// Interface for birds that can run
-interface RunningBird extends Bird {
+interface RunableAnimal extends Animal {
     void run();
 }
 
-// Birds that can fly
-class Sparrow implements FlyingBird {
-    @Override
-    public void eat() {
-        System.out.println("Sparrow is eating seeds");
-    }
+interface FlyableAnimal extends Animal {
+    void fly();
+}
 
-    @Override
-    public void makeSound() {
-        System.out.println("Sparrow: Chirp chirp!");
-    }
+interface SwimmableAnimal extends Animal {
+    void swim();
+}
 
+class Sparrow implements FlyableAnimal {
     @Override
-    public void move() {
-        fly();
+    public void eate() {
+        System.out.println("Sparrow eating");
     }
-
+    @Override
+    public void sleep() {
+        System.out.println("Sparrow sleeping");
+    }
+    @Override
+    public void moved() {
+        System.out.println("Sparrow moving");
+    }
     @Override
     public void fly() {
-        System.out.println("Sparrow is flying gracefully");
+        System.out.println("Sparrow flying");
     }
 }
 
-class Eagle implements FlyingBird, RunningBird {
+class Panguin implements RunableAnimal {
     @Override
-    public void eat() {
-        System.out.println("Eagle is hunting prey");
+    public void eate() {
+        System.out.println("Panguin eating");
     }
-
     @Override
-    public void makeSound() {
-        System.out.println("Eagle: Screech!");
+    public void sleep() {
+        System.out.println("Panguin sleeping");
     }
-
     @Override
-    public void move() {
-        System.out.println("Eagle chooses movement mode...");
-        // Can decide to fly or run
+    public void moved() {
+        System.out.println("Panguin moving");
     }
-
-    @Override
-    public void fly() {
-        System.out.println("Eagle is soaring high in the sky");
-    }
-
     @Override
     public void run() {
-        System.out.println("Eagle is running on the ground");
+        System.out.println("Panguin running");
     }
 }
 
-// Birds that can swim
-class Penguin implements SwimmingBird, RunningBird {
+class Crocodile implements SwimmableAnimal {
     @Override
-    public void eat() {
-        System.out.println("Penguin is eating fish");
+    public void eate() {
+        System.out.println("Crocodile eating");
     }
-
     @Override
-    public void makeSound() {
-        System.out.println("Penguin: Honk honk!");
+    public void sleep() {
+        System.out.println("Crocodile sleeping");
     }
-
     @Override
-    public void move() {
-        swim();  // Penguins prefer swimming
+    public void moved() {
+        System.out.println("Crocodile moving");
     }
-
     @Override
     public void swim() {
-        System.out.println("Penguin is swimming fast in cold water");
-    }
-
-    @Override
-    public void run() {
-        System.out.println("Penguin is waddling on ice");
+        System.out.println("Crocodile swimming");
     }
 }
 
-class Duck implements FlyingBird, SwimmingBird, RunningBird {
+class Duck implements RunableAnimal, FlyableAnimal, SwimmableAnimal {
     @Override
-    public void eat() {
-        System.out.println("Duck is eating plants and small fish");
+    public void eate() {
+        System.out.println("Duck eating");
     }
-
     @Override
-    public void makeSound() {
-        System.out.println("Duck: Quack quack!");
+    public void sleep() {
+        System.out.println("Duck sleeping");
     }
-
     @Override
-    public void move() {
-        System.out.println("Duck can move in multiple ways");
+    public void moved() {
+        System.out.println("Duck moving");
     }
-
+    @Override
+    public void run() {
+        System.out.println("Duck running");
+    }
     @Override
     public void fly() {
-        System.out.println("Duck is flying in V-formation");
+        System.out.println("Duck flying");
     }
-
     @Override
     public void swim() {
-        System.out.println("Duck is swimming in the pond");
-    }
-
-    @Override
-    public void run() {
-        System.out.println("Duck is walking on land");
-    }
-}
-
-// ============== Client Code Demonstrating LSP ==============
-
-class BirdSanctuary {
-    // This method accepts ANY Bird - follows LSP
-    public void careForBird(Bird bird) {
-        System.out.println("\n--- Caring for bird ---");
-        bird.eat();
-        bird.makeSound();
-        bird.move();
-    }
-
-    // Special care for flying birds only
-    public void letBirdFly(FlyingBird bird) {
-        System.out.println("\n--- Letting bird fly ---");
-        bird.fly();
-    }
-
-    // Special care for swimming birds only
-    public void letBirdSwim(SwimmingBird bird) {
-        System.out.println("\n--- Letting bird swim ---");
-        bird.swim();
+        System.out.println("Duck swimming");
     }
 }
 
 public class Main {
-    public static void main(String[] args) {
-        BirdSanctuary sanctuary = new BirdSanctuary();
+    public static void main(String args[]) {
 
-        System.out.println("=== ❌ BAD Approach Problems ===");
-        try {
-            BirdBad penguinBad = new PenguinBad();
-            penguinBad.fly();  // This will crash or lie!
-        } catch (Exception e) {
-            System.out.println("Error: " + e.getMessage() + " (LSP Violation!)");
-        }
-
-        System.out.println("\n=== ✅ GOOD Approach (Following LSP) ===");
-
-        // All these can be treated as generic Birds
-        Bird sparrow = new Sparrow();
-        Bird eagle = new Eagle();
-        Bird penguin = new Penguin();
-        Bird duck = new Duck();
-
-        // LSP in action: All Birds can be substituted
-        sanctuary.careForBird(sparrow);
-        sanctuary.careForBird(eagle);
-        sanctuary.careForBird(penguin);
-        sanctuary.careForBird(duck);
-
-        System.out.println("\n=== Specialized Behaviors ===");
-
-        // Only flying birds can fly
-        sanctuary.letBirdFly(new Sparrow());
-        sanctuary.letBirdFly(new Eagle());
-        sanctuary.letBirdFly(new Duck());
-        // sanctuary.letBirdFly(new Penguin()); // Compile-time error - GOOD!
-
-        // Only swimming birds can swim
-        sanctuary.letBirdSwim(new Penguin());
-        sanctuary.letBirdSwim(new Duck());
-        // sanctuary.letBirdSwim(new Sparrow()); // Compile-time error - GOOD!
     }
 }

@@ -1,26 +1,112 @@
 package com.example.BasicToAdvance.basicjava;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
+
+
+interface Animal{
+    void eate();
+    void sleep();
+    void moved();
+}
+
+interface RunableAnimal extends Animal{
+    void run();
+}
+
+interface FlyableAnimal extends Animal{
+    void fly();
+}
+
+interface SwimmableAnimal extends Animal{
+    void swim();
+}
+
+class Sparrow implements FlyableAnimal{
+    @Override
+    public void eate() {
+        System.out.println("Sparrow eating");
+    }
+    @Override
+    public void sleep() {
+        System.out.println("Sparrow sleeping");
+    }
+    @Override
+    public void moved() {
+        System.out.println("Sparrow moving");
+    }
+    @Override
+    public void fly() {
+        System.out.println("Sparrow flying");
+    }
+}
+
+class Panguin implements  RunableAnimal{
+    @Override
+    public void eate() {
+        System.out.println("Panguin eating");
+    }
+    @Override
+    public void sleep() {
+        System.out.println("Panguin sleeping");
+    }
+    @Override
+    public void moved() {
+        System.out.println("Panguin moving");
+    }
+    @Override
+    public void run() {
+        System.out.println("Panguin running");
+    }
+}
+
+class Crocodile implements SwimmableAnimal{
+    @Override
+    public void eate() {
+        System.out.println("Crocodile eating");
+    }
+    @Override
+    public void sleep() {
+        System.out.println("Crocodile sleeping");
+    }
+    @Override
+    public void moved() {
+        System.out.println("Crocodile moving");
+    }
+    @Override
+    public void swim() {
+        System.out.println("Crocodile swimming");
+    }
+}
+
+class Duck implements RunableAnimal,FlyableAnimal,SwimmableAnimal{
+    @Override
+    public void eate() {
+        System.out.println("Duck eating");
+    }
+    @Override
+    public void sleep() {
+        System.out.println("Duck sleeping");
+    }
+    @Override
+    public void moved() {
+        System.out.println("Duck moving");
+    }
+    @Override
+    public void run() {
+        System.out.println("Duck running");
+    }
+    @Override
+    public void fly() {
+        System.out.println("Duck flying");
+    }
+    @Override
+    public void swim() {
+        System.out.println("Duck swimming");
+    }
+}
 
 public class test2 {
+    public static void main(String args[]) {
 
-   public static void fun(){
-        System.out.println("Hello World");
-
-        String s="hello";
-       int sum=0;
-       for(int i=0;i<s.length()-1;i++){
-           sum+=s.charAt(i)-s.charAt(i+1);
-           System.out.println(s.charAt(i)-s.charAt(i+1));
-       }
-
-       int num[]={1,2,3,4,5,6,7,8,9,10};
-//       List<Integer> list= Arrays.asList(num);
-    }
-
-    public static void main(String args[]){
-        fun();
     }
 }
